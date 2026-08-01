@@ -138,7 +138,10 @@
 .content{
 
     width:100%;
+    
+    display:block;
 
+    width:100%;
 }
 
 
@@ -159,6 +162,7 @@
     background:var(--background);
 
     padding-bottom:20px;
+    
 
 }
 
@@ -253,6 +257,28 @@
     backdrop-filter:blur(15px);
 
     transition:.35s;
+
+    animation:fadeUp .6s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
 
 }
 
@@ -505,3 +531,67 @@
 
 }
 
+@media(max-width:1000px){
+
+.linux-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+    position:relative;
+
+    top:0;
+
+}
+
+.sidebar a.active{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateX(8px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.command-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.linux-hero h1{
+
+    font-size:2.5rem;
+
+}
+
+.search-container{
+
+    flex-direction:column;
+
+}
+
+
+.search-container button{
+
+    width:100%;
+
+    border-radius:12px;
+
+    height:55px;
+
+}
+
+}

@@ -109,175 +109,109 @@
 
         <!-- ================= CONTENT ================= -->
 
-        <section class="content">
+       <section class="content">
 
+    <!-- SEARCH -->
 
-            <!-- SEARCH -->
+    <div class="search-container">
 
-            <div class="search-container">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Linux commands...">
 
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search Linux commands...">
-
-                <button>
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                </button>
-
-            </div>
-
-
-            <!-- COMMANDS WILL START HERE -->
-
-
-<section id="files">
-
-    <h2>File Management</h2>
-
-    <div class="command-card">
-
-        <div class="command-header">
-
-            <h3 class="command-title">ls -la</h3>
-
-            <span class="badge beginner">Beginner</span>
-
-        </div>
-
-        <p class="command-description">
-
-            Lists all files and directories, including hidden files, in a detailed format.
-
-        </p>
-
-        <h4 class="command-label">Syntax</h4>
-
-        <div class="terminal-box">
-
-            <div class="terminal-top">
-
-                <span class="circle red"></span>
-                <span class="circle yellow"></span>
-                <span class="circle green"></span>
-
-            </div>
-
-            <div class="terminal-content">
-
-                $ ls -la
-
-            </div>
-
-        </div>
-
-        <h4 class="command-label">Example</h4>
-
-        <div class="terminal-box">
-
-            <div class="terminal-top">
-
-                <span class="circle red"></span>
-                <span class="circle yellow"></span>
-                <span class="circle green"></span>
-
-            </div>
-
-            <div class="terminal-content">
-
-$ ls -la
-
-drwxr-xr-x project
-
--rw-r--r-- README.md
-
--rw-r--r-- Dockerfile
-
-            </div>
-
-        </div>
-
-        <button class="copy-btn">
-
-            <i class="fa-regular fa-copy"></i>
-
-            Copy Command
-
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-
-        <div class="command-tags">
-
-            <span class="tag">Files</span>
-
-            <span class="tag">Beginner</span>
-
-            <span class="tag">Navigation</span>
-
-        </div>
 
     </div>
 
+    <!-- FILE MANAGEMENT -->
+
+    <section id="files">
+
+        <h2>File Management</h2>
+
+        <div id="fileCommands"></div>
+
+    </section>
+
+    <!-- DIRECTORY -->
+
+<section id="directory">
+
+    <h2>Directory Management</h2>
+
+    <div id="directoryCommands"></div>
+
 </section>
 
+    <!-- PERMISSIONS -->
 
-            <section id="directory">
+<section id="permissions">
 
-                <h2>Directory Management</h2>
+    <h2>Permissions</h2>
 
-            </section>
+    <div id="permissionCommands"></div>
 
+</section>
 
-            <section id="permissions">
+    <!-- PROCESS -->
 
-                <h2>Permissions</h2>
+    <section id="process">
 
-            </section>
+        <h2>Process Management</h2>
 
+        <div id="processCommands"></div>
 
-            <section id="process">
+    </section>
 
-                <h2>Process Management</h2>
+    <!-- NETWORK -->
 
-            </section>
+    <section id="network">
 
+        <h2>Networking</h2>
+        <div id="networkCommands"></div>
 
-            <section id="network">
+    </section>
 
-                <h2>Networking</h2>
+    <!-- DISK -->
 
-            </section>
+    <section id="disk">
 
+        <h2>Disk Management</h2>
+        <div id="diskCommands"></div>
 
-            <section id="disk">
+    </section>
 
-                <h2>Disk Management</h2>
+    <!-- PACKAGE -->
 
-            </section>
+    <section id="package">
 
+        <h2>Package Management</h2>
+        <div id="packageCommands"></div>
 
-            <section id="package">
+    </section>
 
-                <h2>Package Management</h2>
+    <!-- USERS -->
 
-            </section>
+    <section id="users">
 
+        <h2>User Management</h2>
+        <div id="userCommands"></div>
 
-            <section id="users">
+    </section>
 
-                <h2>User Management</h2>
+    <!-- SHELL -->
 
-            </section>
+    <section id="shell">
 
+        <h2>Shell Scripting</h2>
+        <div id="shellCommands"></div>
 
-            <section id="shell">
+    </section>
 
-                <h2>Shell Scripting</h2>
-
-            </section>
-
-        </section>
+</section>
 
     </main>
 

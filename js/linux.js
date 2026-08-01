@@ -346,7 +346,6 @@ const fileCommands = [
 
 const directoryCommands = [
     {
-    category: "Directory Management",
     command: "pwd",
     difficulty: "Beginner",
     description: "Displays the current working directory.",
@@ -355,7 +354,6 @@ const directoryCommands = [
     tags: ["Directory"]
 },
 {
-    category: "Directory Management",
     command: "cd",
     difficulty: "Beginner",
     description: "Changes the current directory.",
@@ -364,7 +362,6 @@ const directoryCommands = [
     tags: ["Directory"]
 },
 {
-    category: "Directory Management",
     command: "mkdir",
     difficulty: "Beginner",
     description: "Creates a new directory.",
@@ -373,7 +370,6 @@ const directoryCommands = [
     tags: ["Directory"]
 },
 {
-    category: "Directory Management",
     command: "rmdir",
     difficulty: "Beginner",
     description: "Removes an empty directory.",
@@ -382,7 +378,6 @@ const directoryCommands = [
     tags: ["Directory"]
 },
 {
-    category: "Directory Management",
     command: "tree",
     difficulty: "Intermediate",
     description: "Displays directory structure as a tree.",
@@ -391,7 +386,6 @@ const directoryCommands = [
     tags: ["Directory"]
 },
 {
-    category: "Directory Management",
     command: "pushd",
     difficulty: "Intermediate",
     description: "Saves and changes the current directory.",
@@ -400,7 +394,6 @@ const directoryCommands = [
     tags: ["Directory"]
 },
 {
-    category: "Directory Management",
     command: "popd",
     difficulty: "Intermediate",
     description: "Returns to the previous directory.",
@@ -409,7 +402,6 @@ const directoryCommands = [
     tags: ["Directory"]
 },
 {
-    category: "Directory Management",
     command: "dirs",
     difficulty: "Intermediate",
     description: "Displays the directory stack.",
@@ -418,7 +410,6 @@ const directoryCommands = [
     tags: ["Directory"]
 },
 {
-    category: "Directory Management",
     command: "basename",
     difficulty: "Intermediate",
     description: "Extracts the filename from a path.",
@@ -427,7 +418,6 @@ const directoryCommands = [
     tags: ["Directory"]
 },
 {
-    category: "Directory Management",
     command: "dirname",
     difficulty: "Intermediate",
     description: "Extracts the directory path.",
@@ -627,205 +617,627 @@ const processCommands = [
 
 const networkCommands = [
 
+{
+    category: "Networking",
+    command: "ping",
+    difficulty: "Beginner",
+    description: "Tests connectivity to another host by sending ICMP echo requests.",
+    syntax: "ping hostname",
+    example: "$ ping google.com",
+    tags: ["Network", "Connectivity"]
+},
 
-]
+{
+    category: "Networking",
+    command: "ip",
+    difficulty: "Beginner",
+    description: "Displays and manages network interfaces, IP addresses, and routes.",
+    syntax: "ip addr",
+    example: "$ ip addr",
+    tags: ["IP", "Interfaces"]
+},
+
+{
+    category: "Networking",
+    command: "ifconfig",
+    difficulty: "Intermediate",
+    description: "Displays and configures network interfaces (legacy command).",
+    syntax: "ifconfig",
+    example: "$ ifconfig",
+    tags: ["Legacy", "Interfaces"]
+},
+
+{
+    category: "Networking",
+    command: "netstat",
+    difficulty: "Intermediate",
+    description: "Displays network connections, routing tables, and interface statistics.",
+    syntax: "netstat -tuln",
+    example: "$ netstat -tuln",
+    tags: ["Ports", "Connections"]
+},
+
+{
+    category: "Networking",
+    command: "ss",
+    difficulty: "Intermediate",
+    description: "Shows socket statistics and active network connections.",
+    syntax: "ss -tuln",
+    example: "$ ss -tuln",
+    tags: ["Sockets", "Ports"]
+},
+
+{
+    category: "Networking",
+    command: "traceroute",
+    difficulty: "Intermediate",
+    description: "Displays the route packets take to reach a destination.",
+    syntax: "traceroute hostname",
+    example: "$ traceroute google.com",
+    tags: ["Routing", "Diagnostics"]
+},
+
+{
+    category: "Networking",
+    command: "curl",
+    difficulty: "Beginner",
+    description: "Transfers data to or from a server using supported protocols.",
+    syntax: "curl URL",
+    example: "$ curl https://google.com",
+    tags: ["HTTP", "API"]
+},
+
+{
+    category: "Networking",
+    command: "wget",
+    difficulty: "Beginner",
+    description: "Downloads files from the web using HTTP, HTTPS, or FTP.",
+    syntax: "wget URL",
+    example: "$ wget https://example.com/file.zip",
+    tags: ["Download", "HTTP"]
+},
+
+{
+    category: "Networking",
+    command: "ssh",
+    difficulty: "Intermediate",
+    description: "Securely connects to a remote Linux machine.",
+    syntax: "ssh user@host",
+    example: "$ ssh ubuntu@192.168.1.100",
+    tags: ["Remote", "SSH"]
+},
+
+{
+    category: "Networking",
+    command: "scp",
+    difficulty: "Intermediate",
+    description: "Securely copies files between local and remote systems.",
+    syntax: "scp source destination",
+    example: "$ scp file.txt ubuntu@192.168.1.100:/home/ubuntu/",
+    tags: ["SSH", "File Transfer"]
+}
+];
+
+const diskCommands = [
+
+{
+    category: "Disk Management",
+    command: "df",
+    difficulty: "Beginner",
+    description: "Displays disk space usage of mounted file systems.",
+    syntax: "df -h",
+    example: "$ df -h",
+    tags: ["Disk", "Storage"]
+},
+
+{
+    category: "Disk Management",
+    command: "du",
+    difficulty: "Beginner",
+    description: "Shows the disk usage of files and directories.",
+    syntax: "du -sh directory",
+    example: "$ du -sh Downloads",
+    tags: ["Disk", "Usage"]
+},
+
+{
+    category: "Disk Management",
+    command: "lsblk",
+    difficulty: "Intermediate",
+    description: "Lists information about block devices such as disks and partitions.",
+    syntax: "lsblk",
+    example: "$ lsblk",
+    tags: ["Disks", "Partitions"]
+},
+
+{
+    category: "Disk Management",
+    command: "fdisk",
+    difficulty: "Advanced",
+    description: "Creates, deletes, and manages disk partitions.",
+    syntax: "sudo fdisk /dev/sda",
+    example: "$ sudo fdisk /dev/sda",
+    tags: ["Partition", "Disk"]
+},
+
+{
+    category: "Disk Management",
+    command: "mount",
+    difficulty: "Intermediate",
+    description: "Mounts a file system to a specified directory.",
+    syntax: "mount device mount_point",
+    example: "$ sudo mount /dev/sdb1 /mnt",
+    tags: ["Mount", "Filesystem"]
+},
+
+{
+    category: "Disk Management",
+    command: "umount",
+    difficulty: "Intermediate",
+    description: "Unmounts a mounted file system.",
+    syntax: "umount mount_point",
+    example: "$ sudo umount /mnt",
+    tags: ["Unmount", "Filesystem"]
+},
+
+{
+    category: "Disk Management",
+    command: "blkid",
+    difficulty: "Intermediate",
+    description: "Displays block device UUIDs and filesystem information.",
+    syntax: "blkid",
+    example: "$ sudo blkid",
+    tags: ["UUID", "Filesystem"]
+},
+
+{
+    category: "Disk Management",
+    command: "mkfs",
+    difficulty: "Advanced",
+    description: "Creates a new filesystem on a partition or disk.",
+    syntax: "mkfs.ext4 /dev/sdb1",
+    example: "$ sudo mkfs.ext4 /dev/sdb1",
+    tags: ["Filesystem", "Format"]
+},
+
+{
+    category: "Disk Management",
+    command: "fsck",
+    difficulty: "Advanced",
+    description: "Checks and repairs Linux file systems.",
+    syntax: "fsck /dev/sdb1",
+    example: "$ sudo fsck /dev/sdb1",
+    tags: ["Filesystem", "Repair"]
+},
+
+{
+    category: "Disk Management",
+    command: "parted",
+    difficulty: "Advanced",
+    description: "Creates and modifies disk partition tables.",
+    syntax: "parted /dev/sda",
+    example: "$ sudo parted /dev/sda",
+    tags: ["Partition", "Disk"]
+}
+
+];
+
+const packageCommands = [
+
+{
+    category: "Package Management",
+    command: "apt update",
+    difficulty: "Beginner",
+    description: "Updates the package list from configured repositories.",
+    syntax: "sudo apt update",
+    example: "$ sudo apt update",
+    tags: ["APT", "Update"]
+},
+
+{
+    category: "Package Management",
+    command: "apt upgrade",
+    difficulty: "Beginner",
+    description: "Upgrades all installed packages to their latest available versions.",
+    syntax: "sudo apt upgrade",
+    example: "$ sudo apt upgrade",
+    tags: ["APT", "Upgrade"]
+},
+
+{
+    category: "Package Management",
+    command: "apt install",
+    difficulty: "Beginner",
+    description: "Installs one or more software packages.",
+    syntax: "sudo apt install package-name",
+    example: "$ sudo apt install nginx",
+    tags: ["APT", "Install"]
+},
+
+{
+    category: "Package Management",
+    command: "apt remove",
+    difficulty: "Beginner",
+    description: "Removes an installed package while keeping configuration files.",
+    syntax: "sudo apt remove package-name",
+    example: "$ sudo apt remove nginx",
+    tags: ["APT", "Remove"]
+},
+
+{
+    category: "Package Management",
+    command: "apt purge",
+    difficulty: "Intermediate",
+    description: "Removes a package along with its configuration files.",
+    syntax: "sudo apt purge package-name",
+    example: "$ sudo apt purge nginx",
+    tags: ["APT", "Purge"]
+},
+
+{
+    category: "Package Management",
+    command: "apt autoremove",
+    difficulty: "Beginner",
+    description: "Removes unused dependencies that are no longer required.",
+    syntax: "sudo apt autoremove",
+    example: "$ sudo apt autoremove",
+    tags: ["APT", "Cleanup"]
+},
+
+{
+    category: "Package Management",
+    command: "apt search",
+    difficulty: "Beginner",
+    description: "Searches for packages in the configured repositories.",
+    syntax: "apt search keyword",
+    example: "$ apt search docker",
+    tags: ["APT", "Search"]
+},
+
+{
+    category: "Package Management",
+    command: "apt show",
+    difficulty: "Beginner",
+    description: "Displays detailed information about a package.",
+    syntax: "apt show package-name",
+    example: "$ apt show git",
+    tags: ["APT", "Information"]
+},
+
+{
+    category: "Package Management",
+    command: "dpkg -i",
+    difficulty: "Intermediate",
+    description: "Installs a local .deb package manually.",
+    syntax: "sudo dpkg -i package.deb",
+    example: "$ sudo dpkg -i vscode.deb",
+    tags: ["DPKG", "Install"]
+},
+
+{
+    category: "Package Management",
+    command: "dpkg -l",
+    difficulty: "Intermediate",
+    description: "Lists all installed packages on the system.",
+    syntax: "dpkg -l",
+    example: "$ dpkg -l",
+    tags: ["DPKG", "Installed Packages"]
+}
+
+];
+
+const userCommands = [
+
+{
+    category: "User Management",
+    command: "whoami",
+    difficulty: "Beginner",
+    description: "Displays the username of the current logged-in user.",
+    syntax: "whoami",
+    example: "$ whoami",
+    tags: ["User", "Identity"]
+},
+
+{
+    category: "User Management",
+    command: "id",
+    difficulty: "Beginner",
+    description: "Displays user ID (UID), group ID (GID), and group memberships.",
+    syntax: "id",
+    example: "$ id",
+    tags: ["User", "Groups"]
+},
+
+{
+    category: "User Management",
+    command: "users",
+    difficulty: "Beginner",
+    description: "Shows the usernames of users currently logged in.",
+    syntax: "users",
+    example: "$ users",
+    tags: ["User", "Login"]
+},
+
+{
+    category: "User Management",
+    command: "groups",
+    difficulty: "Beginner",
+    description: "Displays the groups that the current user belongs to.",
+    syntax: "groups",
+    example: "$ groups",
+    tags: ["Groups"]
+},
+
+{
+    category: "User Management",
+    command: "passwd",
+    difficulty: "Beginner",
+    description: "Changes the password for a user account.",
+    syntax: "passwd",
+    example: "$ passwd",
+    tags: ["Password", "Security"]
+},
+
+{
+    category: "User Management",
+    command: "useradd",
+    difficulty: "Intermediate",
+    description: "Creates a new user account.",
+    syntax: "sudo useradd username",
+    example: "$ sudo useradd devuser",
+    tags: ["User", "Create"]
+},
+
+{
+    category: "User Management",
+    command: "usermod",
+    difficulty: "Intermediate",
+    description: "Modifies an existing user account.",
+    syntax: "sudo usermod options username",
+    example: "$ sudo usermod -aG sudo devuser",
+    tags: ["User", "Modify"]
+},
+
+{
+    category: "User Management",
+    command: "userdel",
+    difficulty: "Intermediate",
+    description: "Deletes a user account.",
+    syntax: "sudo userdel username",
+    example: "$ sudo userdel devuser",
+    tags: ["User", "Delete"]
+},
+
+{
+    category: "User Management",
+    command: "su",
+    difficulty: "Intermediate",
+    description: "Switches to another user account.",
+    syntax: "su username",
+    example: "$ su root",
+    tags: ["User", "Switch"]
+},
+
+{
+    category: "User Management",
+    command: "sudo",
+    difficulty: "Beginner",
+    description: "Executes a command with superuser privileges.",
+    syntax: "sudo command",
+    example: "$ sudo apt update",
+    tags: ["Admin", "Privilege"]
+}
+
+];
+
+const shellCommands = [
+
+{
+    category: "Shell",
+    command: "echo",
+    difficulty: "Beginner",
+    description: "Prints text or variable values to the terminal.",
+    syntax: "echo text",
+    example: "$ echo Hello World",
+    tags: ["Shell", "Output"]
+},
+
+{
+    category: "Shell",
+    command: "history",
+    difficulty: "Beginner",
+    description: "Displays previously executed commands.",
+    syntax: "history",
+    example: "$ history",
+    tags: ["History"]
+},
+
+{
+    category: "Shell",
+    command: "clear",
+    difficulty: "Beginner",
+    description: "Clears the terminal screen.",
+    syntax: "clear",
+    example: "$ clear",
+    tags: ["Terminal"]
+},
+
+{
+    category: "Shell",
+    command: "alias",
+    difficulty: "Intermediate",
+    description: "Creates shortcuts for frequently used commands.",
+    syntax: "alias name='command'",
+    example: "$ alias ll='ls -la'",
+    tags: ["Alias", "Shell"]
+},
+
+{
+    category: "Shell",
+    command: "unalias",
+    difficulty: "Intermediate",
+    description: "Removes an existing alias.",
+    syntax: "unalias alias-name",
+    example: "$ unalias ll",
+    tags: ["Alias"]
+},
+
+{
+    category: "Shell",
+    command: "export",
+    difficulty: "Intermediate",
+    description: "Sets environment variables for the current shell session.",
+    syntax: "export VARIABLE=value",
+    example: "$ export JAVA_HOME=/usr/lib/jvm/java-17",
+    tags: ["Environment"]
+},
+
+{
+    category: "Shell",
+    command: "env",
+    difficulty: "Intermediate",
+    description: "Displays all environment variables.",
+    syntax: "env",
+    example: "$ env",
+    tags: ["Environment"]
+},
+
+{
+    category: "Shell",
+    command: "source",
+    difficulty: "Intermediate",
+    description: "Executes commands from a file in the current shell.",
+    syntax: "source filename",
+    example: "$ source ~/.bashrc",
+    tags: ["Shell", "Configuration"]
+},
+
+{
+    category: "Shell",
+    command: "bash",
+    difficulty: "Intermediate",
+    description: "Starts a new Bash shell session.",
+    syntax: "bash",
+    example: "$ bash",
+    tags: ["Bash"]
+},
+
+{
+    category: "Shell",
+    command: "exit",
+    difficulty: "Beginner",
+    description: "Closes the current shell session.",
+    syntax: "exit",
+    example: "$ exit",
+    tags: ["Shell", "Terminal"]
+}
+
+];
+
 
 /* ==========================================
    Render Commands
 ========================================== */
 
-const container = document.getElementById("fileCommands");
+function renderCommands(commandsArray, containerId) {
 
-fileCommands.forEach(command => {
+    const container = document.getElementById(containerId);
 
-    const badgeClass = command.difficulty.toLowerCase();
+    if (!container) {
+        console.error(`Container '${containerId}' not found.`);
+        return;
+    }
 
-    container.innerHTML += `
+    container.innerHTML = "";
 
-    <div class="command-card">
+    commandsArray.forEach(command => {
 
-        <div class="command-header">
+        const badgeClass = command.difficulty.toLowerCase();
 
-            <h3 class="command-title">${command.command}</h3>
+        container.innerHTML += `
 
-            <span class="badge ${badgeClass}">
-                ${command.difficulty}
-            </span>
+        <div class="command-card">
 
-        </div>
+            <div class="command-header">
 
-        <p class="command-description">
+                <h3 class="command-title">${command.command}</h3>
 
-            ${command.description}
-
-        </p>
-
-        <h4 class="command-label">
-
-            Syntax
-
-        </h4>
-
-        <div class="terminal-box">
-
-            <div class="terminal-top">
-
-                <span class="circle red"></span>
-
-                <span class="circle yellow"></span>
-
-                <span class="circle green"></span>
+                <span class="badge ${badgeClass}">
+                    ${command.difficulty}
+                </span>
 
             </div>
 
-            <div class="terminal-content">
+            <p class="command-description">
+                ${command.description}
+            </p>
 
+            <h4 class="command-label">Syntax</h4>
+
+            <div class="terminal-box">
+
+                <div class="terminal-top">
+
+                    <span class="circle red"></span>
+                    <span class="circle yellow"></span>
+                    <span class="circle green"></span>
+
+                </div>
+
+                <div class="terminal-content">
 ${command.syntax}
+                </div>
 
             </div>
 
-        </div>
+            <h4 class="command-label">Example</h4>
 
-        <h4 class="command-label">
+            <div class="terminal-box">
 
-            Example
+                <div class="terminal-top">
 
-        </h4>
+                    <span class="circle red"></span>
+                    <span class="circle yellow"></span>
+                    <span class="circle green"></span>
 
-        <div class="terminal-box">
+                </div>
 
-            <div class="terminal-top">
-
-                <span class="circle red"></span>
-
-                <span class="circle yellow"></span>
-
-                <span class="circle green"></span>
-
-            </div>
-
-            <div class="terminal-content">
-
+                <div class="terminal-content">
 ${command.example}
+                </div>
+
+            </div>
+
+            <button class="copy-btn">
+
+                <i class="fa-regular fa-copy"></i>
+
+                Copy Command
+
+            </button>
+
+            <div class="command-tags">
+
+                ${command.tags
+                    .map(tag => `<span class="tag">${tag}</span>`)
+                    .join("")}
 
             </div>
 
         </div>
 
-        <button class="copy-btn">
+        `;
 
-            <i class="fa-regular fa-copy"></i>
+    });
 
-            Copy Command
+}
 
-        </button>
-
-        <div class="command-tags">
-
-            ${command.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
-
-        </div>
-
-    </div>
-
-    `;
-
-});
-
-const container = document.getElementById("directoryCommands");
-
-fileCommands.forEach(command => {
-
-    const badgeClass = command.difficulty.toLowerCase();
-
-    container.innerHTML += `
-
-    <div class="command-card">
-
-        <div class="command-header">
-
-            <h3 class="command-title">${command.command}</h3>
-
-            <span class="badge ${badgeClass}">
-                ${command.difficulty}
-            </span>
-
-        </div>
-
-        <p class="command-description">
-
-            ${command.description}
-
-        </p>
-
-        <h4 class="command-label">
-
-            Syntax
-
-        </h4>
-
-        <div class="terminal-box">
-
-            <div class="terminal-top">
-
-                <span class="circle red"></span>
-
-                <span class="circle yellow"></span>
-
-                <span class="circle green"></span>
-
-            </div>
-
-            <div class="terminal-content">
-
-${command.syntax}
-
-            </div>
-
-        </div>
-
-        <h4 class="command-label">
-
-            Example
-
-        </h4>
-
-        <div class="terminal-box">
-
-            <div class="terminal-top">
-
-                <span class="circle red"></span>
-
-                <span class="circle yellow"></span>
-
-                <span class="circle green"></span>
-
-            </div>
-
-            <div class="terminal-content">
-
-${command.example}
-
-            </div>
-
-        </div>
-
-        <button class="copy-btn">
-
-            <i class="fa-regular fa-copy"></i>
-
-            Copy Command
-
-        </button>
-
-        <div class="command-tags">
-
-            ${command.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
-
-        </div>
-
-    </div>
-
-    `;
-
-});
+renderCommands(fileCommands, "fileCommands");
+renderCommands(directoryCommands, "directoryCommands");
+renderCommands(permissionCommands, "permissionCommands");
+renderCommands(processCommands, "processCommands");
+renderCommands(networkCommands, "networkCommands");
+renderCommands(diskCommands, "diskCommands");
+renderCommands(packageCommands, "packageCommands");
+renderCommands(userCommands, "userCommands");
+renderCommands(shellCommands, "shellCommands");

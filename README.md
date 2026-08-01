@@ -1,29 +1,56 @@
-DevOps Learning Hub is an open-source educational platform designed to help learners master DevOps through practical documentation, interactive examples, cheat sheets, and real-world workflows. Built with modern web technologies and DevOps best practices, this project evolves alongside the technologies it teaches.
-
 # 🚀 DevOps Learning Hub
 
-A modern, interactive learning platform designed to help developers master DevOps through practical tutorials, cheat sheets, and real-world examples.
+A modern, responsive, and interactive DevOps learning platform built using **HTML**, **CSS**, and **JavaScript**. The goal of this project is to provide developers, students, and DevOps enthusiasts with an organized collection of commands, tutorials, cheat sheets, and practical learning resources.
 
 ---
 
-## 📖 About
+## 📖 About the Project
 
-DevOps Learning Hub is an open-source educational website that provides structured learning resources for DevOps technologies. The goal is to create a single platform where beginners and professionals can learn, practice, and explore DevOps concepts through interactive documentation.
+DevOps Learning Hub is a personal portfolio project designed to strengthen my skills in:
+
+- Frontend Web Development
+- JavaScript
+- Git & GitHub
+- DevOps Fundamentals
+- UI/UX Design
+- Documentation
+
+The project is being developed step by step, with each section focusing on a core DevOps technology.
 
 ---
 
 ## ✨ Features
 
-- 🌑 Modern Dark Theme
-- 📱 Fully Responsive Design
-- 🐧 Linux Command Reference
-- 🐳 Docker Cheat Sheet
-- ⚙️ CI/CD Learning Resources
-- 🌿 Git & GitHub Guide
-- ☁️ Cloud Computing Basics
-- 🔍 Search Functionality *(Coming Soon)*
-- 📋 Copy-to-Clipboard Commands *(Coming Soon)*
-- 🎯 Interactive Learning Experience
+### 🏠 Homepage
+- Modern responsive landing page
+- Premium dark theme UI
+- Animated hero section
+- Responsive navigation bar
+- Footer with social links
+
+### 🐧 Linux Learning Hub
+- 90+ essential Linux commands
+- Organized into multiple categories
+- Live search functionality
+- Terminal-style command cards
+- Command difficulty badges
+- Copy command button
+- Sticky sidebar navigation
+- Fully responsive design
+
+---
+
+## 📂 Linux Categories
+
+- 📁 File Management
+- 📂 Directory Management
+- 🔒 Permissions
+- ⚙️ Process Management
+- 🌐 Networking
+- 💽 Disk Management
+- 📦 Package Management
+- 👤 User Management
+- 🐚 Shell Commands
 
 ---
 
@@ -31,92 +58,95 @@ DevOps Learning Hub is an open-source educational website that provides structur
 
 - HTML5
 - CSS3
-- JavaScript (Vanilla)
+- JavaScript (ES6)
+- Font Awesome
 - Git
 - GitHub
-- Docker *(Upcoming)*
-- GitHub Actions *(Upcoming)*
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
 DevOps-Learning-Hub/
 │
 ├── index.html
 ├── linux.html
-├── docker.html
-├── cicd.html
-├── about.html
 │
 ├── css/
-│   └── style.css
+│   ├── style.css
+│   └── linux.css
 │
 ├── js/
-│   └── app.js
+│   ├── script.js
+│   └── linux.js
 │
-├── images/
 ├── assets/
-├── docs/
 │
-├── Dockerfile
-├── README.md
-└── .github/
-    └── workflows/
+├── screenshots/
+│
+└── README.md
 ```
 
 ---
 
 ## 🚧 Roadmap
 
-### Phase 1
-- [x] Premium Homepage
-- [ ] Linux Commands Page
-- [ ] Docker Learning Page
-- [ ] CI/CD Learning Page
+### ✅ Completed
 
-### Phase 2
-- [ ] Git & GitHub Guide
-- [ ] Kubernetes
-- [ ] Terraform
-- [ ] Jenkins
-- [ ] Cloud Computing
+- Responsive Homepage
+- Linux Commands Page
+- Live Search
+- Copy Command Feature
+- Responsive Sidebar
+- Premium UI
+- Dark Theme
 
-### Phase 3
-- [ ] Search Functionality
-- [ ] Dark/Light Theme Toggle
-- [ ] Copy Command Button
-- [ ] Interactive Quizzes
+### 🔄 In Progress
 
-### Phase 4
-- [ ] Dockerize Application
-- [ ] GitHub Actions CI/CD
-- [ ] Deploy to GitHub Pages
+- Docker Learning Hub
 
----
+### 📅 Planned
 
-## 🎯 Project Goals
-
-- Build a professional DevOps learning platform.
-- Improve frontend development skills.
-- Practice Git workflows.
-- Learn Docker and CI/CD by implementing them in a real project.
-- Create a portfolio-quality application.
+- Git & GitHub
+- CI/CD
+- Jenkins
+- Kubernetes
+- Terraform
+- AWS
+- Azure
+- Bash Scripting
+- DevOps Interview Questions
+- Practice Labs
+- Quizzes
+- Cheat Sheets
 
 ---
 
-## 📸 Preview
+## 🎯 Purpose
 
-Homepage preview will be added soon.
+This project serves as both:
+
+- A personal DevOps learning resource.
+- A portfolio project showcasing frontend development and JavaScript skills.
+
+It is continuously updated as I learn new DevOps technologies.
 
 ---
+
+## 📸 Screenshots
+
+![alt text](<images/Screenshot (108).png>)
+![alt text](<images/Screenshot (109).png>)
+![alt text](<images/Screenshot (111).png>)
+![alt text](<images/Screenshot (106).png>)
+![alt text](<images/Screenshot (107).png>)
 
 ## 🤝 Contributing
 
-Contributions are welcome!
+Suggestions, improvements, and feedback are always welcome.
 
-If you'd like to improve this project:
+If you'd like to contribute:
 
 1. Fork the repository
 2. Create a feature branch
@@ -125,20 +155,30 @@ If you'd like to improve this project:
 
 ---
 
+## 📬 Connect With Me
+
+**GitHub**
+
+https://github.com/syed-m-umair
+
+**LinkedIn**
+
+https://www.linkedin.com/in/YOUR-LINKEDIN
+
+**Portfolio**
+
+https://syed-m-umair.github.io/Portfolio/
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates me to keep improving it.
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License.
-
----
-
-## 👨‍💻 Author
-
-**Syed Muhammad Umair**
-
-- GitHub: https://github.com/syed-m-umair
-- LinkedIn: *(Add your LinkedIn URL)*
-- Portfolio: https://syed-m-umair.github.io/Portfolio/
-
----
-
-⭐ If you find this project helpful, consider giving it a star!
