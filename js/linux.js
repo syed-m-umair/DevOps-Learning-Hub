@@ -1,105 +1,3 @@
-/* ==========================================
-   DEVOPS LEARNING HUB
-   Linux Page JavaScript
-========================================== */
-
-
-/* ========= COPY COMMAND ========= */
-console.log("Linux JS Loaded");
-const copyButtons = document.querySelectorAll(".copy-btn");
-
-copyButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const terminal = button.parentElement.querySelector(".terminal-content");
-
-        const command = terminal.innerText.trim();
-
-        navigator.clipboard.writeText(command);
-
-        const originalText = button.innerHTML;
-
-        button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-
-        setTimeout(() => {
-
-            button.innerHTML = originalText;
-
-        },2000);
-
-    });
-
-});
-
-
-/* ========= SEARCH COMMANDS ========= */
-
-const searchInput = document.getElementById("searchInput");
-
-const commandCards = document.querySelectorAll(".command-card");
-
-searchInput.addEventListener("keyup", function(){
-
-    const value = this.value.toLowerCase();
-
-    commandCards.forEach(card=>{
-
-        const text = card.innerText.toLowerCase();
-
-        if(text.includes(value)){
-
-            card.style.display="block";
-
-        }
-
-        else{
-
-            card.style.display="none";
-
-        }
-
-    });
-
-});
-
-
-/* ========= ACTIVE SIDEBAR ========= */
-
-const sections = document.querySelectorAll("section[id]");
-
-const sidebarLinks = document.querySelectorAll(".sidebar a");
-
-window.addEventListener("scroll",()=>{
-
-    let current="";
-
-    sections.forEach(section=>{
-
-        const sectionTop = section.offsetTop-120;
-
-        if(pageYOffset>=sectionTop){
-
-            current=section.getAttribute("id");
-
-        }
-
-    });
-
-    sidebarLinks.forEach(link=>{
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href")==="#"+current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
 "use strict";
 
 /* ==========================================
@@ -116,31 +14,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-function initializeSearch(){
 
-    const searchInput=document.getElementById("searchInput");
+/* ========= SEARCH COMMANDS =========
 
-    const cards=document.querySelectorAll(".command-card");
+   Runs after renderCommands() has already populated the page (this file
+   calls renderCommands() synchronously before the DOMContentLoaded event
+   fires, so by the time this runs every .command-card already exists in
+   the DOM).
 
-    searchInput.addEventListener("input",()=>{
+   Uses textContent instead of innerText: innerText depends on the CSS
+   render tree and can return empty/undefined results for freshly
+   injected content, which was silently breaking the filter. textContent
+   has no such dependency and always reflects the actual text.
+*/
 
-        const value=searchInput.value.toLowerCase().trim();
+function initializeSearch() {
 
-        cards.forEach(card=>{
+    const searchInput = document.getElementById("searchInput");
 
-            const text=card.innerText.toLowerCase();
+    if (!searchInput) return;
 
-            if(text.includes(value)){
+    const sections = document.querySelectorAll(".content > section[id]");
 
-                card.style.display="block";
+    searchInput.addEventListener("input", () => {
 
-            }
+        const value = searchInput.value.toLowerCase().trim();
 
-            else{
+        sections.forEach(section => {
 
-                card.style.display="none";
+            const cards = section.querySelectorAll(".command-card");
+            let sectionHasMatch = false;
 
-            }
+            cards.forEach(card => {
+
+                const text = card.textContent.toLowerCase();
+                const matches = value === "" || text.includes(value);
+
+                card.style.display = matches ? "block" : "none";
+
+                if (matches) sectionHasMatch = true;
+
+            });
+
+            // Hide a category's heading too when none of its cards match,
+            // instead of leaving an empty "Permissions" title floating
+            // above nothing.
+            section.style.display = sectionHasMatch ? "" : "none";
 
         });
 
@@ -148,31 +67,34 @@ function initializeSearch(){
 
 }
 
-function initializeCopyButtons(){
 
-    const buttons=document.querySelectorAll(".copy-btn");
+/* ========= COPY COMMAND ========= */
 
-    buttons.forEach(button=>{
+function initializeCopyButtons() {
 
-        button.addEventListener("click",()=>{
+    const buttons = document.querySelectorAll(".copy-btn");
 
-            const terminal=button
-            .parentElement
-            .querySelector(".terminal-content");
+    buttons.forEach(button => {
 
-            const command=terminal.innerText.trim();
+        button.addEventListener("click", () => {
+
+            const terminal = button
+                .parentElement
+                .querySelector(".terminal-content");
+
+            const command = terminal.textContent.trim();
 
             navigator.clipboard.writeText(command);
 
-            const original=button.innerHTML;
+            const original = button.innerHTML;
 
-            button.innerHTML="<i class='fa-solid fa-check'></i> Copied!";
+            button.innerHTML = "<i class='fa-solid fa-check'></i> Copied!";
 
-            setTimeout(()=>{
+            setTimeout(() => {
 
-                button.innerHTML=original;
+                button.innerHTML = original;
 
-            },1500);
+            }, 1500);
 
         });
 
@@ -180,36 +102,34 @@ function initializeCopyButtons(){
 
 }
 
-function initializeSidebar(){
 
-    const sections=document.querySelectorAll("section[id]");
+/* ========= ACTIVE SIDEBAR ========= */
 
-    const links=document.querySelectorAll(".sidebar a");
+function initializeSidebar() {
 
-    window.addEventListener("scroll",()=>{
+    const sections = document.querySelectorAll("section[id]");
+    const links = document.querySelectorAll(".sidebar a");
 
-        let current="";
+    window.addEventListener("scroll", () => {
 
-        sections.forEach(section=>{
+        let current = "";
 
-            const top=section.offsetTop-150;
+        sections.forEach(section => {
 
-            if(window.scrollY>=top){
+            const top = section.offsetTop - 150;
 
-                current=section.id;
-
+            if (window.scrollY >= top) {
+                current = section.id;
             }
 
         });
 
-        links.forEach(link=>{
+        links.forEach(link => {
 
             link.classList.remove("active");
 
-            if(link.getAttribute("href")==="#"+current){
-
+            if (link.getAttribute("href") === "#" + current) {
                 link.classList.add("active");
-
             }
 
         });
@@ -218,25 +138,24 @@ function initializeSidebar(){
 
 }
 
-function initializeSmoothScroll(){
 
-    const links=document.querySelectorAll(".sidebar a");
+/* ========= SMOOTH SCROLL ========= */
 
-    links.forEach(link=>{
+function initializeSmoothScroll() {
 
-        link.addEventListener("click",e=>{
+    const links = document.querySelectorAll(".sidebar a");
+
+    links.forEach(link => {
+
+        link.addEventListener("click", e => {
 
             e.preventDefault();
 
-            const target=document.querySelector(
-                link.getAttribute("href")
-            );
+            const target = document.querySelector(link.getAttribute("href"));
 
-            target.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+            }
 
         });
 

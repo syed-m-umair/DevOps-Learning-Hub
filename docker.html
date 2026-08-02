@@ -1,11 +1,1131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Docker Commands | DevOps Learning Hub</title>
+
+    <meta name="description" content="Master Docker with a practical command reference covering images, containers, volumes, networking, Docker Compose, Dockerfiles, and the registry.">
+
+    <link rel="stylesheet" href="CSS/styles.css">
+
+    <link rel="stylesheet" href="CSS/docker.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
+
 <body>
-    
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+               <h1 class="gradient-text">DevOps Learning Hub</h1>
+
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="linux.html">Linux</a></li>
+
+                <li><a href="docker.html" class="active">Docker</a></li>
+
+                <li><a href="cicd.html">CI/CD</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= PAGE HERO ================= -->
+
+    <section class="docker-hero">
+
+        <div class="hero-content">
+
+            <h1>Docker Command Reference</h1>
+
+            <p>
+
+                Learn the most commonly used Docker commands with
+                explanations, syntax, examples, and real-world usage.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN LAYOUT ================= -->
+
+    <main class="docker-container">
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <h2>Categories</h2>
+
+            <ul>
+
+                <li><a href="#images"><i class="fa-solid fa-layer-group"></i> Images</a></li>
+
+                <li><a href="#containers"><i class="fa-brands fa-docker"></i> Containers</a></li>
+
+                <li><a href="#volumes"><i class="fa-solid fa-database"></i> Volumes</a></li>
+
+                <li><a href="#networking"><i class="fa-solid fa-network-wired"></i> Networking</a></li>
+
+                <li><a href="#compose"><i class="fa-solid fa-cubes"></i> Docker Compose</a></li>
+
+                <li><a href="#dockerfile"><i class="fa-solid fa-file-code"></i> Dockerfile &amp; Build</a></li>
+
+                <li><a href="#registry"><i class="fa-solid fa-cloud-arrow-up"></i> Registry</a></li>
+
+                <li><a href="#system"><i class="fa-solid fa-broom"></i> System &amp; Cleanup</a></li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="content">
+
+            <!-- SEARCH -->
+
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search Docker commands...">
+
+                <button type="button" id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+            </div>
+
+            <p class="no-results" id="noResults">No commands match your search.</p>
+
+
+            <!-- ================= IMAGES ================= -->
+
+            <section id="images">
+
+                <h2>Images</h2>
+
+                <div class="command-card" data-search="docker pull download image registry">
+
+                    <div class="command-header">
+                        <span class="command-title">docker pull</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Downloads an image (or a repository's images) from a
+                        registry such as Docker Hub, so it can be used to
+                        create containers locally.
+                    </p>
+
+                    <p class="command-label">Syntax</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker pull &lt;image&gt;:&lt;tag&gt;</div>
+                    </div>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker pull node:20-alpine</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker pull node:20-alpine">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">images</span>
+                        <span class="tag">registry</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker images list local images">
+
+                    <div class="command-header">
+                        <span class="command-title">docker images</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Lists all images currently stored on your local
+                        machine, including their repository, tag, image ID,
+                        and size.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker images</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker images">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">images</span>
+                        <span class="tag">inspect</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker rmi remove delete image">
+
+                    <div class="command-header">
+                        <span class="command-title">docker rmi</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Removes one or more images from local storage. Use
+                        <code>-f</code> to force removal of an image that's
+                        still referenced by a stopped container.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker rmi node:20-alpine</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker rmi node:20-alpine">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">images</span>
+                        <span class="tag">cleanup</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= CONTAINERS ================= -->
+
+            <section id="containers">
+
+                <h2>Containers</h2>
+
+                <div class="command-card" data-search="docker run create start container">
+
+                    <div class="command-header">
+                        <span class="command-title">docker run</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Creates and starts a new container from an image.
+                        <code>-d</code> runs it in the background, and
+                        <code>-p</code> maps a host port to a container port.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker run -d -p 8080:80 --name my-app nginx</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker run -d -p 8080:80 --name my-app nginx">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">containers</span>
+                        <span class="tag">core</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker ps list running containers status">
+
+                    <div class="command-header">
+                        <span class="command-title">docker ps</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Lists running containers. Add <code>-a</code> to
+                        include stopped ones too.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker ps -a</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker ps -a">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">containers</span>
+                        <span class="tag">inspect</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker stop start restart container">
+
+                    <div class="command-header">
+                        <span class="command-title">docker stop / start / restart</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Controls a container's lifecycle: gracefully stop a
+                        running container, start a stopped one, or restart
+                        it in one step.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker stop my-app
+docker start my-app
+docker restart my-app</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker stop my-app
+docker start my-app
+docker restart my-app">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">containers</span>
+                        <span class="tag">lifecycle</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker exec run command inside container shell">
+
+                    <div class="command-header">
+                        <span class="command-title">docker exec</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Runs a command inside an already-running container.
+                        Commonly used with <code>-it</code> to open an
+                        interactive shell for debugging.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker exec -it my-app sh</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker exec -it my-app sh">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">containers</span>
+                        <span class="tag">debugging</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker logs view container output stdout">
+
+                    <div class="command-header">
+                        <span class="command-title">docker logs</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Shows the stdout/stderr output of a container. Add
+                        <code>-f</code> to follow the log stream live, similar
+                        to <code>tail -f</code>.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker logs -f my-app</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker logs -f my-app">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">containers</span>
+                        <span class="tag">debugging</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker rm remove delete container">
+
+                    <div class="command-header">
+                        <span class="command-title">docker rm</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Removes a stopped container. Use <code>-f</code> to
+                        force-remove a running one without stopping it first.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker rm my-app</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker rm my-app">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">containers</span>
+                        <span class="tag">cleanup</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= VOLUMES ================= -->
+
+            <section id="volumes">
+
+                <h2>Volumes</h2>
+
+                <div class="command-card" data-search="docker volume create persistent storage">
+
+                    <div class="command-header">
+                        <span class="command-title">docker volume create</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Creates a named volume that Docker manages for
+                        persisting data outside a container's writable layer.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker volume create app-data</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker volume create app-data">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">volumes</span>
+                        <span class="tag">storage</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker run mount volume attach container">
+
+                    <div class="command-header">
+                        <span class="command-title">Mount a volume</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Attaches a named volume to a container using
+                        <code>-v</code>, so data written inside the container
+                        survives container removal.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker run -d -v app-data:/var/lib/mysql mysql:8</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker run -d -v app-data:/var/lib/mysql mysql:8">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">volumes</span>
+                        <span class="tag">persistence</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker volume ls rm list remove volumes">
+
+                    <div class="command-header">
+                        <span class="command-title">docker volume ls / rm</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Lists all volumes on the host, or removes a specific
+                        one that's no longer attached to any container.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker volume ls
+docker volume rm app-data</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker volume ls
+docker volume rm app-data">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">volumes</span>
+                        <span class="tag">cleanup</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= NETWORKING ================= -->
+
+            <section id="networking">
+
+                <h2>Networking</h2>
+
+                <div class="command-card" data-search="docker network create custom network bridge">
+
+                    <div class="command-header">
+                        <span class="command-title">docker network create</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Creates a custom bridge network so containers can
+                        discover and talk to each other by service name
+                        instead of IP address.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker network create app-net</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker network create app-net">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">networking</span>
+                        <span class="tag">bridge</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker run network attach container to network">
+
+                    <div class="command-header">
+                        <span class="command-title">Attach a container to a network</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Runs a container on a specific network using
+                        <code>--network</code>, enabling it to reach other
+                        containers on that same network by name.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker run -d --network app-net --name api my-api-image</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker run -d --network app-net --name api my-api-image">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">networking</span>
+                        <span class="tag">containers</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker network ls inspect list networks">
+
+                    <div class="command-header">
+                        <span class="command-title">docker network ls / inspect</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Lists all Docker networks, or inspects one to see
+                        which containers are connected and their assigned
+                        IPs.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker network ls
+docker network inspect app-net</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker network ls
+docker network inspect app-net">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">networking</span>
+                        <span class="tag">inspect</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= DOCKER COMPOSE ================= -->
+
+            <section id="compose">
+
+                <h2>Docker Compose</h2>
+
+                <div class="command-card" data-search="docker compose up start multi container app">
+
+                    <div class="command-header">
+                        <span class="command-title">docker compose up</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Builds (if needed) and starts every service defined
+                        in <code>docker-compose.yml</code>. Add
+                        <code>-d</code> to run in the background and
+                        <code>--build</code> to force a rebuild.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker compose up -d --build</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker compose up -d --build">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">compose</span>
+                        <span class="tag">core</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker compose down stop remove services">
+
+                    <div class="command-header">
+                        <span class="command-title">docker compose down</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Stops and removes all containers, networks (and
+                        optionally volumes with <code>-v</code>) created by
+                        <code>docker compose up</code>.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker compose down -v</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker compose down -v">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">compose</span>
+                        <span class="tag">cleanup</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker compose logs ps view service status">
+
+                    <div class="command-header">
+                        <span class="command-title">docker compose logs / ps</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Views combined logs across all services, or lists
+                        the status of every service defined in the compose
+                        file.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker compose logs -f
+docker compose ps</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker compose logs -f
+docker compose ps">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">compose</span>
+                        <span class="tag">debugging</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= DOCKERFILE & BUILD ================= -->
+
+            <section id="dockerfile">
+
+                <h2>Dockerfile &amp; Build</h2>
+
+                <div class="command-card" data-search="docker build create image from dockerfile tag">
+
+                    <div class="command-header">
+                        <span class="command-title">docker build</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Builds an image from a Dockerfile in the given
+                        context. <code>-t</code> tags the resulting image
+                        with a name and version.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker build -t my-app:1.0 .</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker build -t my-app:1.0 .">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">build</span>
+                        <span class="tag">core</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker tag rename version image">
+
+                    <div class="command-header">
+                        <span class="command-title">docker tag</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Creates a new tag that refers to an existing image,
+                        commonly used to prepare an image for pushing to a
+                        specific registry or version.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker tag my-app:1.0 username/my-app:1.0</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker tag my-app:1.0 username/my-app:1.0">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">build</span>
+                        <span class="tag">registry</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="dockerignore multi stage build best practice layer caching">
+
+                    <div class="command-header">
+                        <span class="command-title">Multi-stage build snippet</span>
+                        <span class="badge advanced">Advanced</span>
+                    </div>
+
+                    <p class="command-description">
+                        Uses two build stages to keep the final image small:
+                        one stage installs dependencies and builds the app,
+                        the other copies only the compiled output.
+                    </p>
+
+                    <p class="command-label">Dockerfile</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">FROM node:20-alpine AS build
+WORKDIR /app
+COPY . .
+RUN npm ci && npm run build
+
+FROM node:20-alpine
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+CMD ["node", "dist/index.js"]</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="FROM node:20-alpine AS build
+WORKDIR /app
+COPY . .
+RUN npm ci && npm run build
+
+FROM node:20-alpine
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+CMD [&quot;node&quot;, &quot;dist/index.js&quot;]">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">build</span>
+                        <span class="tag">best-practice</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= REGISTRY ================= -->
+
+            <section id="registry">
+
+                <h2>Registry</h2>
+
+                <div class="command-card" data-search="docker login authenticate docker hub registry">
+
+                    <div class="command-header">
+                        <span class="command-title">docker login</span>
+                        <span class="badge beginner">Beginner</span>
+                    </div>
+
+                    <p class="command-description">
+                        Authenticates with a registry (Docker Hub by default,
+                        or a private one with <code>--username</code> and a
+                        server address) so you can push and pull private
+                        images.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker login</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker login">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">registry</span>
+                        <span class="tag">auth</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker push upload image to registry">
+
+                    <div class="command-header">
+                        <span class="command-title">docker push</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Uploads a tagged local image to its registry, making
+                        it available for others (or your CI/CD pipeline) to
+                        pull.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker push username/my-app:1.0</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker push username/my-app:1.0">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">registry</span>
+                        <span class="tag">ci-cd</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SYSTEM & CLEANUP ================= -->
+
+            <section id="system">
+
+                <h2>System &amp; Cleanup</h2>
+
+                <div class="command-card" data-search="docker system prune free disk space unused">
+
+                    <div class="command-header">
+                        <span class="command-title">docker system prune</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Removes unused containers, networks, dangling images,
+                        and build cache to free up disk space. Add
+                        <code>-a</code> to also remove all unused images, not
+                        just dangling ones.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker system prune -a</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker system prune -a">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">system</span>
+                        <span class="tag">cleanup</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker stats live resource usage cpu memory">
+
+                    <div class="command-header">
+                        <span class="command-title">docker stats</span>
+                        <span class="badge intermediate">Intermediate</span>
+                    </div>
+
+                    <p class="command-description">
+                        Streams live CPU, memory, network, and disk I/O usage
+                        for all running containers, useful for spotting a
+                        resource-hungry service.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker stats</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker stats">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">system</span>
+                        <span class="tag">monitoring</span>
+                    </div>
+
+                </div>
+
+                <div class="command-card" data-search="docker inspect metadata detail container image">
+
+                    <div class="command-header">
+                        <span class="command-title">docker inspect</span>
+                        <span class="badge advanced">Advanced</span>
+                    </div>
+
+                    <p class="command-description">
+                        Returns detailed JSON metadata about a container,
+                        image, volume, or network — IP address, mounted
+                        volumes, env vars, restart policy, and more.
+                    </p>
+
+                    <p class="command-label">Example</p>
+                    <div class="terminal-box">
+                        <div class="terminal-top">
+                            <span class="circle red"></span>
+                            <span class="circle yellow"></span>
+                            <span class="circle green"></span>
+                        </div>
+                        <div class="terminal-content">docker inspect my-app</div>
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="docker inspect my-app">Copy Command</button>
+
+                    <div class="command-tags">
+                        <span class="tag">system</span>
+                        <span class="tag">debugging</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-logo">
+
+               <h1 class="gradient-text">DevOps Learning Hub</h1>
+
+                <p>
+
+                    Learn Linux, Docker, Git, CI/CD,
+                    Kubernetes, Terraform and Cloud Computing.
+
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="linux.html">Linux</a></li>
+
+                    <li><a href="docker.html">Docker</a></li>
+
+                    <li><a href="cicd.html">CI/CD</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 DevOps Learning Hub.
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="js/docker.js"></script>
+
 </body>
+
 </html>
