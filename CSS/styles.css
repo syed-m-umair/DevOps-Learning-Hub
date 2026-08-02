@@ -1108,4 +1108,182 @@ footer{
 
 }
 
+/* ==========================================
+   RESPONSIVE / MOBILE FIXES
+========================================== */
 
+/* ===== NAVBAR ===== */
+
+@media(max-width:900px){
+
+.navbar{
+
+    height:70px;
+
+    gap:14px;
+
+}
+
+.nav-links{
+
+    gap:18px;
+
+    overflow-x:auto;
+
+    -ms-overflow-style:none;
+
+    scrollbar-width:none;
+
+    white-space:nowrap;
+
+}
+
+.nav-links::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.logo h1{
+
+    font-size:1.3rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.navbar{
+
+    height:64px;
+
+}
+
+.nav-links{
+
+    gap:14px;
+
+}
+
+.nav-links a{
+
+    font-size:.85rem;
+
+}
+
+.logo h1{
+
+    font-size:1.1rem;
+
+}
+
+}
+
+/* ===== HERO ===== */
+
+@media(max-width:900px){
+
+.hero{
+
+    grid-template-columns:1fr;
+
+    min-height:auto;
+
+    padding:60px 0;
+
+    gap:40px;
+
+}
+
+.hero h1{
+
+    font-size:2.4rem;
+
+}
+
+.terminal-body{
+
+    padding:20px;
+
+    font-size:14px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h1{
+
+    font-size:1.9rem;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.btn{
+
+    text-align:center;
+
+}
+
+}
+
+/* ===== SECTIONS / TYPE SCALE ===== */
+
+@media(max-width:768px){
+
+section{
+
+    padding:60px 0;
+
+}
+
+h2{
+
+    font-size:2rem;
+
+}
+
+.section-title{
+
+    font-size:2.1rem;
+
+}
+
+}
+
+/* ===== CARDS ===== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    margin-top:50px;
+
+}
+
+@media(max-width:768px){
+
+.cards{
+
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+}
