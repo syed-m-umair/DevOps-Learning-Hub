@@ -1,56 +1,59 @@
 # 🚀 DevOps Learning Hub
 
-A modern, responsive, and interactive DevOps learning platform built using **HTML**, **CSS**, and **JavaScript**. The goal of this project is to provide developers, students, and DevOps enthusiasts with an organized collection of commands, tutorials, cheat sheets, and practical learning resources.
+A modern, responsive learning platform designed to help beginners and aspiring DevOps engineers learn essential DevOps technologies through interactive tutorials, command references, and practical examples.
+
+🌐 **Live Demo:** https://syed-m-umair.github.io/DevOps-Learning-Hub/
 
 ---
 
 ## 📖 About the Project
 
-DevOps Learning Hub is a personal portfolio project designed to strengthen my skills in:
+DevOps Learning Hub is an open-source educational website that provides organized learning resources for core DevOps technologies. The goal is to simplify complex concepts through an intuitive interface, categorized command references, and real-world examples.
 
-- Frontend Web Development
-- JavaScript
-- Git & GitHub
-- DevOps Fundamentals
-- UI/UX Design
-- Documentation
-
-The project is being developed step by step, with each section focusing on a core DevOps technology.
+The project follows modern web development and DevOps practices, including version control, automated deployment, and continuous project improvements.
 
 ---
 
-## ✨ Features
+## ✨ Current Features
 
-### 🏠 Homepage
-- Modern responsive landing page
-- Premium dark theme UI
-- Animated hero section
+### 🏠 Home Page
+- Premium responsive landing page
+- Modern dark UI
 - Responsive navigation bar
+- Hero section with call-to-action buttons
+- Technology cards
 - Footer with social links
 
 ### 🐧 Linux Learning Hub
 - 90+ essential Linux commands
-- Organized into multiple categories
+- Commands organized into multiple categories:
+  - File Management
+  - Directory Management
+  - Permissions
+  - Process Management
+  - Networking
+  - Disk Management
+  - Package Management
+  - User Management
+  - Shell Scripting
 - Live search functionality
-- Terminal-style command cards
-- Command difficulty badges
-- Copy command button
-- Sticky sidebar navigation
-- Fully responsive design
+- Terminal-style command examples
+- Copy-to-clipboard feature
+- Difficulty badges
+- Command tags
+- Responsive design
 
----
-
-## 📂 Linux Categories
-
-- 📁 File Management
-- 📂 Directory Management
-- 🔒 Permissions
-- ⚙️ Process Management
-- 🌐 Networking
-- 💽 Disk Management
-- 📦 Package Management
-- 👤 User Management
-- 🐚 Shell Commands
+### 🐳 Docker Learning Hub
+- Interactive Docker command reference
+- Image Management
+- Container Management
+- Volume Management
+- Network Management
+- Docker Compose
+- Registry Commands
+- Live search
+- Terminal examples
+- Copy command functionality
 
 ---
 
@@ -59,78 +62,139 @@ The project is being developed step by step, with each section focusing on a cor
 - HTML5
 - CSS3
 - JavaScript (ES6)
-- Font Awesome
 - Git
 - GitHub
+- GitHub Actions
+- GitHub Pages
 
 ---
 
-## 📁 Project Structure
+## ⚙️ DevOps Practices Implemented
+
+- Git Version Control
+- GitHub Repository Management
+- GitHub Actions Automation
+- Continuous Deployment (CD)
+- GitHub Pages Hosting
+- Semantic Versioning (Git Tags & Releases)
+- Responsive Web Development
+- Incremental Development Workflow
+
+---
+
+## 🚀 Deployment
+
+The project is automatically deployed using **GitHub Actions**.
+
+Every push to the `main` branch triggers an automated deployment workflow that publishes the latest version to GitHub Pages.
+
+Deployment Pipeline:
+
+```
+Developer
+    │
+    ▼
+Git Push
+    │
+    ▼
+GitHub Actions
+    │
+    ▼
+Deploy to GitHub Pages
+    │
+    ▼
+Live Website
+```
+
+---
+
+## 📂 Project Structure
 
 ```
 DevOps-Learning-Hub/
 │
-├── index.html
-├── linux.html
-│
-├── css/
-│   ├── style.css
-│   └── linux.css
+├── CSS/
+│   ├── styles.css
+│   ├── linux.css
+│   └── docker.css
 │
 ├── js/
-│   ├── script.js
-│   └── linux.js
+│   ├── linux.js
+│   └── docker.js
 │
 ├── assets/
 │
-├── screenshots/
-│
-└── README.md
+├── index.html
+├── linux.html
+├── docker.html
+├── README.md
 ```
 
 ---
 
-## 🚧 Roadmap
+## 🎯 Roadmap
 
 ### ✅ Completed
 
-- Responsive Homepage
-- Linux Commands Page
-- Live Search
-- Copy Command Feature
-- Responsive Sidebar
-- Premium UI
-- Dark Theme
-
-### 🔄 In Progress
-
+- Premium Home Page
+- Linux Learning Hub
 - Docker Learning Hub
+- GitHub Pages Deployment
+- GitHub Actions CD Pipeline
 
-### 📅 Planned
+### 🚧 In Progress
 
-- Git & GitHub
-- CI/CD
-- Jenkins
-- Kubernetes
-- Terraform
-- AWS
-- Azure
-- Bash Scripting
-- DevOps Interview Questions
-- Practice Labs
-- Quizzes
-- Cheat Sheets
+- CI/CD Learning Hub
+- Kubernetes Learning Hub
+- Terraform Learning Hub
+- Jenkins Learning Hub
+- AWS Learning Hub
+- Monitoring & Logging
+- Interview Preparation
+- DevOps Roadmaps
 
 ---
 
-## 🎯 Purpose
+## 🤝 Contributing
 
-This project serves as both:
+Contributions are welcome!
 
-- A personal DevOps learning resource.
-- A portfolio project showcasing frontend development and JavaScript skills.
+If you'd like to improve this project:
 
-It is continuously updated as I learn new DevOps technologies.
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+## 📌 Future DevOps Improvements
+
+- Continuous Integration (CI)
+- Docker Containerization
+- Nginx Deployment
+- Automated Testing
+- HTML/CSS/JavaScript Linting
+- Infrastructure as Code (Terraform)
+- Cloud Deployment
+- Monitoring & Logging
+- Security Scanning
+
+---
+
+## 👨‍💻 Author
+
+**Syed Muhammad Umair**
+
+- GitHub: https://github.com/syed-m-umair
+- LinkedIn: https://www.linkedin.com/in/syed-m-umair/
+- Portfolio: https://syed-m-umair.github.io/Portfolio/
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub. It helps support the project and motivates future improvements.
 
 ---
 
@@ -141,41 +205,9 @@ It is continuously updated as I learn new DevOps technologies.
 ![alt text](<images/Screenshot (111).png>)
 ![alt text](<images/Screenshot (106).png>)
 ![alt text](<images/Screenshot (107).png>)
-
-## 🤝 Contributing
-
-Suggestions, improvements, and feedback are always welcome.
-
-If you'd like to contribute:
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Open a Pull Request
-
----
-
-## 📬 Connect With Me
-
-**GitHub**
-
-https://github.com/syed-m-umair
-
-**LinkedIn**
-
-https://www.linkedin.com/in/YOUR-LINKEDIN
-
-**Portfolio**
-
-https://syed-m-umair.github.io/Portfolio/
-
----
-
-## ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
-
-It helps others discover the project and motivates me to keep improving it.
+![alt text](<images/Screenshot (120).png>)
+![alt text](<images/Screenshot (121).png>)
+![alt text](<images/Screenshot (122).png>)
 
 ---
 
